@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle Royale Arena</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- Menu Screen -->
+        <div id="menuScreen" class="screen">
+            <div class="menu-content">
+                <h1>⚔️ BATTLE ROYALE ARENA ⚔️</h1>
+                <p class="subtitle">Survive, Fight, Win!</p>
+                <button id="startBtn" class="btn">START GAME</button>
+                <div class="instructions">
+                    <h3>📱 Mobile Controls:</h3>
+                    <p><strong>Left Joystick:</strong> Move</p>
+                    <p><strong>Right Buttons:</strong> Attack & Pickup</p>
+                    <h3>⌨️ Keyboard Controls:</h3>
+                    <p><strong>WASD/Arrows:</strong> Move | <strong>SPACE:</strong> Attack | <strong>E:</strong> Pickup</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="screen">
+            <div class="gameover-content">
+                <h1 id="gameOverTitle">GAME OVER</h1>
+                <p id="gameOverMessage">You were defeated!</p>
+                <p id="finalStats"></p>
+                <button id="restartBtn" class="btn">PLAY AGAIN</button>
+            </div>
+        </div>
+        
+        <!-- Victory Screen -->
+        <div id="victoryScreen" class="screen">
+            <div class="victory-content">
+                <h1>🏆 VICTORY! 🏆</h1>
+                <p>You are the last one standing!</p>
+                <p id="victoryStats"></p>
+                <button id="playAgainBtn" class="btn">PLAY AGAIN</button>
+            </div>
+        </div>
+        
+        <!-- HUD -->
+        <div id="hud" class="hud">
+            <div class="stat">
+                <span>❤️ Health:</span>
+                <div class="bar health-bar">
+                    <div id="healthBar" class="bar-fill"></div>
+                </div>
+                <span id="healthText">100/100</span>
+            </div>
+            <div class="stat">
+                <span>🔫 Ammo:</span>
+                <div class="bar ammo-bar">
+                    <div id="ammoBar" class="bar-fill"></div>
+                </div>
+                <span id="ammoText">50/50</span>
+            </div>
+            <div class="stat">
+                <span>👾 Enemies:</span>
+                <span id="enemyCount">10</span>
+            </div>
+            <div id="zoneWarning" class="zone-warning"></div>
+        </div>
+        
+        <!-- Mobile Controls -->
+        <div id="mobileControls" class="mobile-controls">
+            <!-- Left Joystick -->
+            <div class="joystick-container left-joystick">
+                <div class="joystick-bg">
+                    <div id="leftJoystick" class="joystick-stick"></div>
+                </div>
+            </div>
+            
+            <!-- Right Action Buttons -->
+            <div class="buttons-container right-buttons">
+                <button id="attackBtn" class="action-btn attack-btn" data-action="attack">ATTACK<br>🔫</button>
+                <button id="pickupBtn" class="action-btn pickup-btn" data-action="pickup">PICKUP<br>E</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
